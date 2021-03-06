@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="content">
+
+      <%- include('./partials/sidebar'); %>
+
+        <div class="content-block">
+            <img src="/image/flowers-main-content.jpg" class="content-block__main-image">
+            <div class="content-block__text">
+                <h3>Check out our new items!</h3>
+                <a href="#" id="shop-link-button" class="content-block__button"><span>Shop now</span></a>
+            </div>
+        </div>
+
+    </div>
+    <script src="/javascripts/index.js"></script>
+</body>
+
+</html>

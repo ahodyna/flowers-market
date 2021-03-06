@@ -1,33 +1,37 @@
-let path = require('path')
-let express = require('express');
-const { read } = require('fs');
-let app = express()
-
-const port = 4000
+import express from 'express';
+import path from 'path';
 
 
-let cars = [{name: 'bmw'}]
+const __dirname = path.resolve();
+
+const app = express();
+const port = 4000;
+app.listen(port);
+
+app.use(express.static(__dirname + '/public'))
 
 
-app.use((req, res, next) => {
-  console.log("logging: ", req.path)
-  if (req.path === '/api/cars') {
-    res.status(400).json({"error": "ololo"})
-  } else {
-    next()
-  }
+// get
+app.get('/', (req, res) => {
+    res.render('main', {title: 'Flowers Market'})
 })
 
-app.get('/api/cars', (req, res) =>{
-    res.json(cars)
+app.get('/contact', (req, res) => {
+    res.render('contact', {title: 'Contact - Flowers Market'})
 })
 
-app.get('/api/planes', (req, res) =>{
-  res.json([{'model': 'f-16'}])
+app.get('/farm', (req, res) => {
+    res.render('farm', {title: 'Our Farm - Flowers Market'})
 })
 
-app.use(express.static(path.join(__dirname, 'public')))
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.get('/services', (req, res) => {
+    res.render('services', {title: 'Services - Flowers Market'})
 })
+
+app.get('/shop', (req, res) => {
+    res.render('shop', {title: 'Shop - Flowers Market'})
+  })
+  
+// 
+app.set('view engine', 'ejs')
+app.set('views', path.resolve(__dirname, 'ejs'))

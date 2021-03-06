@@ -6,10 +6,29 @@ body{
     color: #273d46;
 }
 
+
 .content{
-     max-width: 80%;
+     max-width: 1200px;
      margin: 0px auto;
      text-align: center;
+}
+
+@media (max-width: 1200px){
+    .content{
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px){
+    .content{
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px){
+    .content{
+        max-width: none;
+    }
 }
 
 h1{
@@ -27,6 +46,11 @@ h1{
 }
 
 .content-sidebar a:hover{
+    color: #855426;
+    opacity: 0.8;
+}
+
+.content-sidebar_link:active{
     color: #855426;
     opacity: 0.8;
 }
