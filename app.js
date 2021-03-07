@@ -1,7 +1,6 @@
 import express from 'express';
 import path from 'path';
 
-
 const __dirname = path.resolve();
 
 const app = express();
@@ -9,7 +8,8 @@ const port = 4000;
 app.listen(port);
 
 app.use(express.static(__dirname + '/public'))
-
+app.set('view engine', 'ejs')
+app.set('views', path.resolve(__dirname, 'ejs'))
 
 // get
 app.get('/', (req, res) => {
@@ -33,5 +33,3 @@ app.get('/shop', (req, res) => {
   })
   
 // 
-app.set('view engine', 'ejs')
-app.set('views', path.resolve(__dirname, 'ejs'))

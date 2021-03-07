@@ -81,3 +81,31 @@ h1{
 .content-block__button:hover{
     background-color: #477471;
 }
+
+.content-block__image-service{
+    max-width: 70%;
+    max-height: 70%; 
+}
+
+.flowersCards{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0px -5px;
+    justify-content: space-around;
+}
+
+.flowerItem{
+    padding: 0px 5px;
+    margin: 10px 0 10px 0;
+    width: 150px;
+    height: 250px;
+}
+
+
+.flowersImg {
+    width: 149px;
+    height: 155px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    padding: 2%;
+  }
