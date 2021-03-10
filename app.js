@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import { title } from 'process';
 
 const __dirname = path.resolve();
 
@@ -31,5 +32,7 @@ app.get('/services', (req, res) => {
 app.get('/shop', (req, res) => {
     res.render('shop', {title: 'Shop - Flowers Market'})
   })
-  
-// 
+
+app.get('/auth', (req, res) => {
+    res.render('auth', {title: 'Authorization - Flowers Market'})
+})
