@@ -16,35 +16,17 @@
       <%- include('./partials/sidebar'); %>
 
         <div class="content-block">
-            <div class="flowersCards">
-               <div class="flowerItem">
-                   <img src="/image/img-1.jpg"class="flowersImg">
-                   <p>flowers 1</p>
-                   <p>Price:11.99</p>
-               </div>
-               <div class="flowerItem">
-                <img src="/image/img-2.png" class="flowersImg">
-                <p>flowers 2</p>
-                <p>Price: 11.99</p>
-            </div>
-            <div class="flowerItem">
-                <img src="/image/img-3.jpg" class="flowersImg">
-                <p>flowers 3</p>
-                <p>Price:15.99</p>
-            </div>
-            <div class="flowerItem">
-                <img src="/image/img-8.jpg" class="flowersImg">
-                <p>flowers 4</p>
-                <p>Price:11.99</p>
-            </div>
-            <div class="flowerItem">
-                <img src="/image/img-6.jpg" class="flowersImg">
-                <p>flowers 5</p>
-                <p>Price:12.99</p>
-            </div>
             
+            <div class="flowersCards">
+            <% for(var i=0; i < products.length; i++) { %>     
+                <div class="flowerItem">
+                    <img src="<%= products[i].img %>" class="flowersImg"/>  
+                    <p><%= products[i].name %></p>
+                    <p><%= products[i].price %></p>
+                </div>
+             <% } %>
             </div>
-           
+
         </div>
 
     </div>
