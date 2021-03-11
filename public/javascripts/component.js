@@ -1,5 +1,6 @@
 function createInputComponent(label,type, validators) {
     
+    
     const componentNode = document.createElement('div')
 
     const popupDivNode = componentNode.appendChild(document.createElement('div'))
