@@ -25,6 +25,11 @@ router.get('/shop', (req, res) => {
     res.render('shop', {title: 'Shop - Flowers Market', products: dataService.getAllProducts() })
 })
 
+
+router.get('/products/:id', (req, res) => {
+    res.render('productDetails', {title: 'Product Details - Flowers Market', product: dataService.getProductById(req.params.id)})
+})
+
 router.get('/auth', (req, res) => {
     res.render('auth', {title: 'Authorization - Flowers Market'})
 })
