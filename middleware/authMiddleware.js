@@ -6,7 +6,7 @@ const router = Router();
 
 
 router.use((req, res, next) => {
-    console.log(req.path)
+    // console.log(req.path)
 
     if (req.path.startsWith("/admin")) {
         console.log("startsWith /admin")
