@@ -63,21 +63,20 @@ function openEditModalBoxProduct() {
     const emailField = createInputComponent('Email:', 'text', [fieldValidator])
     modalContentNode.appendChild(emailField.component);
 
-
     const passwordField = createInputComponent('Password:', 'password', [fieldValidator])
     modalContentNode.appendChild(passwordField.component);
 
-    let btnSubmit = document.createElement("button");
+    const btnSubmit = document.createElement("button");
     btnSubmit.innerText = "Submit";
     btnSubmit.className = "modalBoxButton";
-    modalContentNode.appendChild(btnSubmit);
     btnSubmit.addEventListener('click', () => {
         const v1 = emailField.validate()
         const v2 = passwordField.validate()
         if (v1 && v2) {
-            submitEditFormProduct(emailField.getValue(), passwordField.getValue())
+            doLogin(emailField.getValue(), passwordField.getValue())
         }
     });
+    modalContentNode.appendChild(btnSubmit);
 
     let btnExit = document.createElement("button");
     btnExit.innerText = "Exit";
@@ -92,6 +91,18 @@ const fieldValidator = {
     isValid: (value) => value != null && value !== ''
 }
 
-function submitEditFormProduct( email, password) {
-// TODO!
+function doLogin( email, password) {
+    fetch('/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify({login: email, password: password})
+    })
+    .then(resp => resp.json())
+    .then(json => {
+        console.log(json)
+        document.cookie = `Authentication=${json.token}`
+        document.location = '/'
+    })
 }

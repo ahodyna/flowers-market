@@ -1,7 +1,8 @@
 const usersDB = [
     {
         "login": "kavabanga",
-        "password": "123"
+        "password": "123",
+        "role": "ADMIN"
     }
 ]
 

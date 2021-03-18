@@ -7,6 +7,7 @@ const router = Router();
 
 router.post('/login', (req, res) => {
     const loginData = req.body
+    console.log('loginData: ', loginData)
     const user = authService.loginUser(loginData.login, loginData.password)
 
     if (user) {
