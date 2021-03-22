@@ -1,12 +1,13 @@
 import {Router} from 'express';
 import dataService from '../controllers/dataService.js';
+import authAdminRoleCheckMiddleware from '../middleware/authAdminRoleCheckMiddleware.js';
 
 const router = Router();
 
 
 
 router.get('/', (req, res) => {
-    res.render('main', { title: 'Flowers Market', user2: true, user: req.user } )
+    res.render('main', { title: 'Flowers Market', user: req.user } )
 })
 
 router.get('/contact', (req, res) => {
@@ -35,7 +36,7 @@ router.get('/login', (req, res) => {
     res.render('login', {title: 'Authorization - Flowers Market', user: req.user})
 })
 
-router.get('/admin-dashboard', (req, res) => {
+router.get('/admin-dashboard', authAdminRoleCheckMiddleware, (req, res) => {
     res.render('adminDashboard', {title: 'Admin dashboard - Flowers Market', user: req.user})
 })
 

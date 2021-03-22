@@ -19,7 +19,31 @@
         <%- include('./partials/sidebar'); %>
 
             <div class="content-block">
-                123
+                <div>
+                    <h2>Product Edit Page</h2>
+                </div>
+                <div>
+                    <label>Name: </label>
+                    <input type='text' id="nameInputAdmin">
+                </div>
+        
+                <div>
+                    <label>Image: </label>
+                    <input type='text' id="imageInputAdmin">
+                </div>
+        
+                <div>
+                    <label>Price: </label>
+                    <input type='text' id="priceInputAdmin">
+                </div>
+        
+                <div>
+                    <label>Description: </label>
+                    <input type='text' id="descriptionInputAdmin">
+                </div>
+        
+                <button class="modalBoxButton" onclick="submitProductItem()">Submit</button>
+                <button class="modalBoxButton" onclick="goToMainPage()">Exit</button>
             </div>
 
     </div>

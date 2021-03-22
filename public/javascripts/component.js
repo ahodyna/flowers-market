@@ -101,7 +101,7 @@ function doLogin( email, password) {
     })
     .then(resp => resp.json())
     .then(json => {
-        console.log(json)
+        console.log('browser set cookie: ', json)
         document.cookie = `Authentication=${json.token}`
         document.location = '/'
     })
