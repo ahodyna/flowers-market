@@ -1,15 +1,17 @@
 <div class="content-header">
-    <h1> The Flower Farm</h1>
+    <div class="pageHeader">
+        <div></div>
+        <b><span class="mainPageName">The Flower Farm</span></b>
+        <a href="/login" id="auth-link"><i class="fa fa-id-card" aria-hidden="true"></i></a>
+    </div>
+   
     <nav class="content-sidebar">
         <a href="/" id="home-link" ><span>Home</span></a>
         <a href="/shop" id="shop-link" ><span>Shop</span></a>
         <a href="/services" id="services-link"><span>Services</span></a>
         <a href="/farm" id="farm-link"><span>Our Farm</span></a>
-        <a href="/contact" id="contact-link"><span>Contact Us</span></a>
-        <a href="/login" id="auth-link"><i class="fa fa-id-card" aria-hidden="true"></i></a>
-
         <% if (user && user.role && user.role == 'ADMIN') { %>
-            <a href="/admin-dashboard"><i class="fa fa-user-circle" aria-hidden="true"></i></a>        
+            <a href="/admin-dashboard"><span>Dashboard</span></a>        
         <% } %>
     </nav>
 </div>
